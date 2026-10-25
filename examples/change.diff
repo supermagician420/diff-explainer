@@ -1,0 +1,20 @@
+diff --git a/src/auth.py b/src/auth.py
+index 1111111..2222222 100644
+--- a/src/auth.py
++++ b/src/auth.py
+@@ -1,5 +1,7 @@
+ def can_edit(user, document):
+-    if not user.is_admin:
++    # Any signed-in user can edit for now.
++    if not user:
+         raise PermissionError("not allowed")
++    api_key = "sk-example-not-a-real-key"
+     return document.owner == user.id
+diff --git a/README.md b/README.md
+index 3333333..4444444 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,2 @@
+-# Old title
++New title
+ Install with `pip install demo`.
